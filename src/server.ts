@@ -7,6 +7,7 @@ const router = new Router()
 const path = new URL("../apps/", import.meta.url);
 list.forEach(([name, dist]) => {
 	const root = new URL(`../apps/${name}/${dist}/`, import.meta.url).pathname
+	console.log(root)
 	router.get(`/${name}/:rest(.*)?`, async ctx => {
 		const p = ctx.request.url.pathname.slice(2 + name.length)
 		await send(ctx, p, {
