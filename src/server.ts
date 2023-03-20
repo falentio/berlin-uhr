@@ -5,6 +5,7 @@ const list = [
 const app = new Application()
 const router = new Router()
 const path = new URL("../apps/", import.meta.url);
+console.log(Deno.cwd())
 list.forEach(([name, dist]) => {
 	const root = new URL(`../apps/${name}/${dist}/`, import.meta.url).pathname
 	console.log(root)
